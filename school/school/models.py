@@ -22,9 +22,10 @@ class City(models.Model):
 class School(models.Model):
     SCHOOL_CODES = load_types('school_codes.csv')
     school_code = models.IntegerField(db_index=True, choices=SCHOOL_CODES)
+    name = models.CharField(max_length=100)
     city = models.ForeignKey(City, db_index=True)
     street = models.CharField(max_length=100)
-    street_nr = models.IntegerField()
+    street_nr = models.CharField(max_length=10)
     zip_code = models.CharField(max_length=10)
     patron = models.CharField(max_length=150, blank=True, null=True)
     site = models.CharField(max_length=200, blank=True, null=True)
