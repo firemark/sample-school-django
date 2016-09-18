@@ -18,6 +18,9 @@ class City(models.Model):
     district_code = models.IntegerField(db_index=True)
     comm_code = models.IntegerField(db_index=True)
 
+    def __unicode__(self):
+        return self.name
+
 
 class School(models.Model):
     SCHOOL_CODES = load_types('school_codes.csv')
