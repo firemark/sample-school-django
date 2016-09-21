@@ -38,4 +38,6 @@ class School(models.Model):
     agencies = models.IntegerField(default=0)
     fulltime_teachers = models.IntegerField(default=0)
     nonfulltime_teachers = models.IntegerField(default=0)
+    cor_x = models.DecimalField(max_digits=8, decimal_places=5, null=True)
+    cor_y = models.DecimalField(max_digits=8, decimal_places=5, null=True)
 
